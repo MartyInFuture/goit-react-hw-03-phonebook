@@ -84,11 +84,13 @@ class App extends Component {
         <h2>Contacts</h2>
 
         <Search onSearch={this.onSearch} contacts={this.state.contacts} />
-        <Contacts
-          contacts={this.state.contacts}
-          search={this.state.search}
-          deleteItem={this.deleteItem}
-        />
+        {this.state.contacts.length !== 0 && (
+          <Contacts
+            contacts={this.state.contacts}
+            search={this.state.search}
+            deleteItem={this.deleteItem}
+          />
+        )}
       </div>
     );
   }
